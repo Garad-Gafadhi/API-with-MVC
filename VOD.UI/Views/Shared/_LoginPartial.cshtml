@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using VOD.Common.Entities
+@inject SignInManager<VodUser> SignInManager
+@inject UserManager<VodUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="user-drop-down" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="False">
+                @User.Identity.Name&nbsp;<img src="~/images/avatar2.jpg" class="img-circle avatar" height="40" />
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index"
+                   title="Manage">Hello @User.Identity.Name!</a>
+                <form class="form-inline dropdown-item" asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout-menu-button" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                </form>
+            </div>
+        </li>
+
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+</ul>

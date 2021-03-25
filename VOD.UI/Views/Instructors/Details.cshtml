@@ -1,0 +1,47 @@
+﻿@model InstructorDTO;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Instructor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InstructorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InstructorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InstructorDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InstructorDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InstructorAvatar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InstructorAvatar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div>
+        <a class="btn btn-success btn-group-sm" asp-action="Edit" asp-route-id="@Model.Id">
+            <i class="material-icons">keyboard_arrow_left</i>
+            <span>Edit</span>
+        </a>
+    </div>
+
+    <div>
+        <a class="btn btn-primary no-border-radius no-left-padding" asp-action="Index">
+            <i class="material-icons">keyboard_arrow_left</i>
+            <span>Back to List</span>
+        </a>
+    </div>
+</div>

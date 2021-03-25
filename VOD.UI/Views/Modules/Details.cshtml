@@ -1,0 +1,42 @@
+﻿@model ModuleDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Module</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModuleTitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModuleTitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseId)
+        </dd>
+    </dl>
+</div>
+
+<div>
+<div>
+    <a class="btn btn-success btn-group-sm" asp-action="Edit" asp-route-id="@Model.Id">
+        <i class="material-icons">keyboard_arrow_left</i>
+        <span>Edit</span>
+    </a>
+</div>
+
+<div>
+    <a class="btn btn-primary no-border-radius no-left-padding" asp-action="Index">
+        <i class="material-icons">keyboard_arrow_left</i>
+        <span>Back to List</span>
+    </a>
+</div>
+</div>

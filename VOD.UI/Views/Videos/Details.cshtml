@@ -1,0 +1,71 @@
+﻿@model VideoDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Video</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Thumbnail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Thumbnail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModuleId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModuleId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div>
+        <a class="btn btn-success btn-group-sm" asp-action="Edit" asp-route-id="@Model.Id">
+            <i class="material-icons">keyboard_arrow_left</i>
+            <span>Edit</span>
+        </a>
+    </div>
+
+    <div>
+        <a class="btn btn-primary no-border-radius no-left-padding" asp-action="Index">
+            <i class="material-icons">keyboard_arrow_left</i>
+            <span>Back to List</span>
+        </a>
+    </div>
+</div>
